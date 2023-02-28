@@ -1,0 +1,363 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+
+<!-- saved from url=(0041)https://pybo.kr/common/profile/base/1431/ -->
+<html lang="ko" style="user-select: auto;"><head style="user-select: auto;"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Required meta tags -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" style="user-select: auto;">
+    <link rel="shortcut icon" type="image/x-icon" href="https://pybo.kr/static/img/favicon.ico" style="user-select: auto;">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./유저프로파일_files/bootstrap.min.css" style="user-select: auto;">
+    <!-- pybo CSS -->
+    <link rel="stylesheet" type="text/css" href="./유저프로파일_files/style.css" style="user-select: auto;">
+    <!-- Font Awesome JS -->
+    <link href="./유저프로파일_files/all.min.css" rel="stylesheet" style="user-select: auto;"> <!--CDN 링크 --> <title style="user-select: auto;">파이보</title></head>
+
+
+<body style="user-select: auto;">
+<!-- 네비게이션바 -->
+
+
+<div class="container mt-3" style="user-select: auto;">
+    <div class="row" style="user-select: auto;">
+        <div class="col-sm-12 col-md-3 col-lg-2 p-2" style="user-select: auto;">
+            <!-- Sidebar  -->
+            <nav id="sidebar" class="border-secondary" style="user-select: auto;">
+                <div class="list-group" style="user-select: auto;">
+                    <a class="rounded-0 list-group-item list-group-item-action list-group-item-light " href="https://pybo.kr/pybo/question/list/qna/" style="user-select: auto;">질문과답변</a>
+                    <a class="rounded-0 list-group-item list-group-item-action list-group-item-light " href="https://pybo.kr/pybo/question/list/free/" style="user-select: auto;">자유게시판</a>
+                    <!--
+                    <a class="rounded-0 list-group-item list-group-item-action list-group-item-light " href="/pybo/question/list/tip/">팁과강좌</a>
+                    <a class="rounded-0 list-group-item list-group-item-action list-group-item-light " href="/pybo/question/list/quiz/">파이썬퀴즈</a>
+                    <a class="rounded-0 list-group-item list-group-item-action list-group-item-light " href="/pybo/question/list/news/">새로운소식</a>
+                    <a class="rounded-0 list-group-item list-group-item-action list-group-item-light " href="/pybo/question/list/job/">구인구직</a>
+                    -->
+                    <a class="rounded-0 list-group-item list-group-item-action list-group-item-light " href="https://pybo.kr/pybo/question/list/bug/" style="user-select: auto;">버그및건의</a>
+                </div>
+            </nav>
+
+
+            <ul class="my-3 small" style="padding-left: 2em; user-select: auto;">
+                <li class="my-1" style="user-select: auto;"><a href="https://wikidocs.net/book/1" target="_blank" style="user-select: auto;">점프 투 파이썬</a></li>
+                <li class="my-1" style="user-select: auto;"><a href="https://wikidocs.net/book/4223" target="_blank" style="user-select: auto;">점프 투 장고</a></li>
+                <li class="my-1" style="user-select: auto;"><a href="https://wikidocs.net/book/4542" target="_blank" style="user-select: auto;">점프 투 플라스크</a></li>
+                <li class="my-1" style="user-select: auto;"><a href="https://wikidocs.net/book/31" target="_blank" style="user-select: auto;">점프 투 자바</a></li>
+                <li class="my-1" style="user-select: auto;"><a href="https://wikidocs.net/book/7601" target="_blank" style="user-select: auto;">점프 투 스프링부트</a></li>
+                <li class="my-1" style="user-select: auto;"><a href="https://wikidocs.net/book/8531" target="_blank" style="user-select: auto;">점프 투 FastAPI</a></li>
+                <li class="my-1" style="user-select: auto;"><a href="https://wikidocs.net/book/5445" target="_blank" style="user-select: auto;">점프 투 파이썬 <br style="user-select: auto;">(라이브러리 예제편)</a></li>
+            </ul>
+
+
+            <!--
+            <a href="https://wikidocs.net/105844"><img src="https://i.imgur.com/wmSBiqU.jpg" class="d-block my-3"></a>
+            <a href="https://wikidocs.net/4321"><img src="https://i.imgur.com/WG61Vwk.jpg" class="mx-auto d-block my-2"></a>
+            <a href="https://wikidocs.net/102760"><img src="https://i.imgur.com/dJkcLOc.jpg" class="mx-auto d-block my-2"></a>
+            -->
+
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-10 p-2" style="user-select: auto;">
+            <div id="content" class="border-secondary" style="user-select: auto;">
+                <div class="content_block" style="user-select: auto;">
+
+
+                    <ul class="nav nav-tabs" style="user-select: auto;">
+                        <li class="nav-item" style="user-select: auto;">
+                            <a class="nav-link active" href="{% url 'pybo:user_profile' %}" style="user-select: auto;">기본정보</a>
+                        </li>
+                        <li class="nav-item" style="user-select: auto;">
+                            <a class="nav-link " href="{% url 'pybo:user_question' %}" style="user-select: auto;">게시</a>
+                        </li>
+                        <li class="nav-item" style="user-select: auto;">
+                            <a class="nav-link " href="{% url 'pybo:user_answer' %}" style="user-select: auto;">답변</a>
+                        </li>
+                        <li class="nav-item" style="user-select: auto;">
+                            <a class="nav-link " href="{% url 'pybo:user_comment' %}" style="user-select: auto;">댓글</a>
+                        </li>
+                    </ul>
+                    <div id="profile_base" style="user-select: auto;">
+
+
+                        <div class="card" style="user-select: auto;">
+                            <div class="card-header" style="display: flex; align-items:center; user-select: auto;">
+                                <div class="col" style="padding: 0px; user-select: auto;">
+                                    <!-- Title -->
+                                    <h4 class="mb-0" style="user-select: auto;">
+                                        회원 정보
+                                    </h4>
+                                </div>
+                                <div class="col-auto" style="padding: 0px; user-select: auto;">
+
+                                    <a class="btn btn-sm btn-webceph-2" href="/accounts/password/change" role="button" style="border-color: #3b506c; user-select: auto;">수정하기</a>
+
+                                </div>
+
+                            </div>
+
+                            <!--        시작                                                                                                                 -->
+
+                            <div class="card-body" style="user-select: auto;">
+
+
+                                <div class="row align-items-center" style="user-select: auto;">
+                                    <div class="col" style="user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            닉네임
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+                                        <small class="text-muted" style="user-select: auto;">
+                                            양재천두더지
+                                        </small>
+
+                                    </div>
+
+                                </div> <!-- / .row -->
+
+                                <!-- Divider -->
+                                <hr style="user-select: auto;">
+
+                                <div class="row align-items-center" style="user-select: auto;">
+                                    <div class="col" style="user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            이름
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+                                        <small class="text-muted" style="user-select: auto;">
+                                            블라호비치
+                                        </small>
+
+                                    </div>
+                                </div> <!-- / .row -->
+
+                                <!-- Divider -->
+                                <hr style="user-select: auto;">
+
+                                <div class="row align-items-center" style="user-select: auto;">
+                                    <div class="col" style="user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            성
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+                                        <small class="text-muted" style="user-select: auto;">
+                                            사르
+                                        </small>
+
+                                    </div>
+                                </div> <!-- / .row -->
+
+                                <!-- Divider -->
+                                <hr style="user-select: auto;">
+
+                                <div class="row align-items-center" style="user-select: auto;">
+                                    <div class="col" style="user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            국가
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+                                        <small class="text-muted" style="user-select: auto;">
+
+
+                                            Korea, Republic of
+
+
+                                        </small>
+
+                                    </div>
+                                </div> <!-- / .row -->
+
+
+                                <!-- Divider -->
+                                <hr style="user-select: auto;">
+
+                                <div class="row align-items-center" style="user-select: auto;">
+                                    <div class="col" style="user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            직종
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+                                        <small class="text-muted" style="user-select: auto;">
+
+
+                                            Student
+
+                                        </small>
+
+                                    </div>
+                                </div> <!-- / .row -->
+
+
+                                <!-- Divider -->
+                                <hr style="user-select: auto;">
+
+
+                                <div class="row align-items-center" style="user-select: auto;">
+                                    <div class="col" style="user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            이메일
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+                                        <small class="text-muted" style="user-select: auto;">
+                                            헤이 모두들 안녕 내가 누군지 아니?
+                                        </small>
+
+                                    </div>
+                                </div> <!-- / .row -->
+
+                                <!-- Divider -->
+                                <hr style="user-select: auto;">
+
+                                <div class="row align-items-center" style="user-select: auto;">
+                                    <div class="col" style="flex: 0 0 auto; user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            페이스북 링크
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+                                        <small class="text-muted" style="user-select: auto;">
+                                            <a target="_blank" href="https://" style="color: rgb(75, 112, 253) !important; user-select: auto;"></a>
+                                        </small>
+
+                                    </div>
+                                </div> <!-- / .row -->
+                                <hr style="user-select: auto;">
+                                <div class="row align-items-center" style="user-select: auto;">
+                                    <div class="col" style="flex: 0 0 auto; user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            소개
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+                                        <small class="text-muted" style="user-select: auto;">
+
+                                        </small>
+
+                                    </div>
+                                </div>
+
+
+                                <!-- Divider -->
+                                <hr style="user-select: auto;">
+
+                                <div class="row align-items-center" style="user-select: auto;">
+
+                                    <div class="col" style="user-select: auto;">
+
+                                        <!-- Title -->
+                                        <h5 class="mb-0" style="user-select: auto;">
+                                            계정 설정
+                                        </h5>
+
+                                    </div>
+                                    <div class="col-auto" style="user-select: auto;">
+
+
+                                        <a class="btn btn-sm btn-webceph-2" href="/pybo/password_reset/" role="button" style="border-color: #3b506c; user-select: auto;">비밀번호 변경</a>
+                                        <!-- <a href="/ko/account_delete/" class="btn btn-sm btn-webceph-5" id="delete_account">계정삭제</a> -->
+
+
+                                    </div>
+                                </div> <!-- / .row -->
+
+
+                            </div>
+
+                        </div>
+
+                        <!--        끝                                                                                                 -->
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<footer class="footer" style="user-select: auto;">
+    <div class="container mt-3" style="user-select: auto;">
+        <span class="text-muted" style="user-select: auto;">©2020 • PYBO.KR</span>
+        <div class="float-right small" style="user-select: auto;"><a href="https://pybo.kr/common/privacy/" style="user-select: auto;">개인정보취급방침</a></div>
+    </div>
+</footer>
+
+<!-- jQuery JS -->
+<script src="./유저프로파일_files/jquery-3.4.1.min.js.download" style="user-select: auto;"></script>
+<!-- Bootstrap JS -->
+<script src="./유저프로파일_files/popper.min.js.download" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" style="user-select: auto;"></script>
+<script src="./유저프로파일_files/bootstrap.min.js.download" style="user-select: auto;"></script>
+<!-- 자바스크립트 Start -->
+
+<script type="text/javascript" style="user-select: auto;">
+    $(document).ready(function(){
+        $(".page-link").on('click', function() {
+            $("#page").val($(this).data("page"));
+            $("#searchForm").submit();
+        });
+
+        $(".so").on('click', function() {
+            $("#so").val($(this).data("so"));
+            $("#page").val(1);
+            $("#searchForm").submit();
+        });
+
+        var profile_id = "1431";
+        var user_id = "None";
+        if(profile_id == user_id) {
+            $(".profile-link").addClass("active");
+        }
+
+        $('.so').tooltip();
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+
+
+<!-- 자바스크립트 End -->
+
+</body></html>
+{% endblock %}

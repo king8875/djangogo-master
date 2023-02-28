@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "bootstrap-icons": "^1.10.3"
+  },
+  "name": "djangogo-master",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
